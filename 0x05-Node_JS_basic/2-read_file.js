@@ -35,7 +35,14 @@ function countStudents(path) {
     console.log(`Number of students: ${count}`);
     /* eslint-disable guard-for-in */
     for (const index in fields) {
-      console.log(`Number of students in ${fields[index]}: ${fieldCount[index]}. List: ${fieldNames[index].toString()}`);
+      let students = '';
+      for (const idx in fieldNames[index]) {
+        if (idx > 0) {
+          students += ', ';
+        }
+        students += fieldNames[index][idx];
+      }
+      console.log(`Number of students in ${fields[index]}: ${fieldCount[index]}. List: ${students}`);
     }
   });
 }
