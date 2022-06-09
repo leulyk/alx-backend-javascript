@@ -46,6 +46,7 @@ function countStudents(path) {
           }
           console.log(`Number of students in ${fields[index]}: ${fieldCount[index]}. List: ${students}`);
         }
+        resolve(true);
       }
     });
   });
